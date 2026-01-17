@@ -96,7 +96,7 @@ function registerPerformanceRoutes(app) {
     writeData(performances);
     res.json({
       ...performances[index],
-      message: 'Duration increased by 5 minutes (non-idempotent operation)'
+      message: '...'
     });
   });
 

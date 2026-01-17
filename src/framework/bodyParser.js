@@ -15,11 +15,13 @@ function bodyParser() {
         try {
           req.body = JSON.parse(body);
         } catch (error) {
-          const err = new Error('Invalid JSON');
+          const err = new Error('krivoy JSON');
           err.statusCode = 400;
           return next(err);
         }
       }
+      console.log('RAW BODY:', body);
+      console.log('PARSED BODY:', req.body);
       next();
     });
 

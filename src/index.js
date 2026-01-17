@@ -7,6 +7,7 @@ const app = new Application();
 
 app.use((req, res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+  console.log('LOG:', req.method, req.url, 'params:', req.params, 'query:', req.query);
   next();
 });
 
@@ -17,5 +18,5 @@ registerActorRoutes(app);
 
 const PORT = 3000;
 app.listen(PORT, () => {
-  console.log(`Theatre API server running on http://localhost:${PORT}!!!`);
+  console.log(`server running on http://localhost:${PORT}!!!`);
 });
