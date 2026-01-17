@@ -30,7 +30,7 @@ function registerActorRoutes(app) {
     const actor = actors.find(a => a.id === id);
     
     if (!actor) {
-      return res.status(404).json({ error: 'Actor not found' });
+      return res.status(404).json({ error: 'актера такого нет' });
     }
     
     res.json(actor);
@@ -60,7 +60,7 @@ function registerActorRoutes(app) {
     const index = actors.findIndex(a => a.id === id);
     
     if (index === -1) {
-      return res.status(404).json({ error: 'Actor not found' });
+      return res.status(404).json({ error: 'актера такого нет' });
     }
     
     actors[index] = {
@@ -82,7 +82,7 @@ function registerActorRoutes(app) {
     const index = actors.findIndex(a => a.id === id);
     
     if (index === -1) {
-      return res.status(404).json({ error: 'Actor not found' });
+      return res.status(404).json({ error: 'актера такого нет' });
     }
     
     if (req.body.name) actors[index].name = req.body.name;
@@ -104,13 +104,13 @@ function registerActorRoutes(app) {
     const index = actors.findIndex(a => a.id === id);
     
     if (index === -1) {
-      return res.status(404).json({ error: 'Actor not found' });
+      return res.status(404).json({ error: 'актера такого нет' });
     }
     
     const deleted = actors.splice(index, 1)[0];
     writeData(actors);
     
-    res.json({ message: 'Actor deleted', deleted });
+    res.json({ message: 'актер удален', deleted });
   });
 }
 

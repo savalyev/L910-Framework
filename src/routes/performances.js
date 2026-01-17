@@ -30,7 +30,7 @@ function registerPerformanceRoutes(app) {
     const performance = performances.find(p => p.id === id);
     
     if (!performance) {
-      return res.status(404).json({ error: 'Performance not found' });
+      return res.status(404).json({ error: 'не имеем таких постановок' });
     }
     
     res.json(performance);
@@ -61,7 +61,7 @@ function registerPerformanceRoutes(app) {
     const index = performances.findIndex(p => p.id === id);
     
     if (index === -1) {
-      return res.status(404).json({ error: 'Performance not found' });
+      return res.status(404).json({ error: 'не имеем таких постановок' });
     }
     
     performances[index] = {
@@ -84,7 +84,7 @@ function registerPerformanceRoutes(app) {
     const index = performances.findIndex(p => p.id === id);
     
     if (index === -1) {
-      return res.status(404).json({ error: 'Performance not found' });
+      return res.status(404).json({ error: 'не имеем таких постановок' });
     }
     
     if (req.body.title) performances[index].title = req.body.title;
@@ -106,7 +106,7 @@ function registerPerformanceRoutes(app) {
     const index = performances.findIndex(p => p.id === id);
     
     if (index === -1) {
-      return res.status(404).json({ error: 'Performance not found' });
+      return res.status(404).json({ error: 'не имеем таких постановок' });
     }
     
     const deleted = performances.splice(index, 1)[0];
